@@ -8,18 +8,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?=$title?></title>
+    <title><?=$config->title?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=$config->theme_virtual?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=$config->theme_virtual?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="<?=$config->theme_virtual?>css/clean-blog.min.css" rel="stylesheet">
     <style> 
         /* add a color to theactive page */
         #mainNav .navbar-nav>li.nav-item>a.active {
@@ -27,7 +27,7 @@
         }
         
       </style>
-
+    <?=$config->loadhead?>
   </head>
 
   <body>
@@ -42,7 +42,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-          <?=makeLinks($nav1);?>
+          <?=makeLinks($config->nav1);?>
            <!--
             <li class="nav-item">
               <a class="nav-link active" href="index.html">Home</a>
@@ -75,14 +75,14 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('<?=$config->theme_virtual?>img/home-bg.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1><?=$siteName?></h1>
-              <span class="subheading"><?=$slogan?><?=$sloganIcon?><?=$planetContent?>
+              <h1><?=$config->siteName?></h1>
+              <span class="subheading"><?=$config->slogan?><?=$config->sloganIcon?><?=$config->planetContent?>
                
               </span>
             </div>
@@ -96,7 +96,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
         <div class="page-heading">
-              <h1><?=$pageHeader?></h1>
-              <span class="subheading"><?=$subHeader?></span>
+              <h1><?=$config->pageHeader?></h1>
+              <span class="subheading"><?=$config->subHeader?></span>
         </div>
+         <?=showFeedback();?>
           <!-- header ends here -->
