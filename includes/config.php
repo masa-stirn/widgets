@@ -124,7 +124,7 @@ define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
 
 //START NEW THEME STUFF - be sure to add trailing slash!
 $sub_folder = 'widgets/';//change to 'widgets' or 'sprockets' etc.
-$config->theme = 'Brick';//sub folder to themes
+$config->theme = 'Clean';//sub folder to themes
 
 //will add sub-folder if not loaded to root:
 $config->physical_path = $_SERVER["DOCUMENT_ROOT"] . '/' . $sub_folder;
